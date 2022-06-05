@@ -4,6 +4,11 @@ import axios from "axios";
 export default class cinema extends Component {
   constructor() {
     super();
+    this.state = {
+      cinemaList: [],
+      oldList: [],
+    };
+    this.searchRef = React.createRef();
     // axios.get("请求地址").then(res=>{}).catch(err=>{console.log(err)})
     //axios 第三方的库专门用于请求数据
 
@@ -26,7 +31,11 @@ export default class cinema extends Component {
       },
     })
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data.data.cinemas);
+        this.setState({
+          cinemaList: res.data.data.cinemas,
+          oldList: res.data.data.cinemas,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -36,6 +45,47 @@ export default class cinema extends Component {
   //生命周期函数更适合发送ajax
 
   render() {
-    return <div>cinema</div>;
+    return (
+      <div>
+        <input
+          onInput={(event) => this.handleInput(event)}
+          ref={this.searchRef}
+        ></input>
+        <h1>cinema</h1>
+        <div>
+          {this.state.cinemaList.map((item) => (
+            <dl key={item.cinemaId}>
+              <dt>{item.name}</dt>
+              <dd>{item.address}</dd>
+            </dl>
+          ))}
+        </div>
+      </div>
+    );
   }
+
+  handleInput = (event) => {
+    console.log("input", event.target.value, this.searchRef.current.value);
+
+    var newList = this.state.oldList.filter(
+      (item) =>
+        item.name
+          .toUpperCase()
+          .includes(this.searchRef.current.value.toUpperCase()) ||
+        item.address
+          .toUpperCase()
+          .includes(this.searchRef.current.value.toUpperCase())
+    );
+    console.log(newList);
+
+    this.setState({
+      cinemaList: newList,
+    });
+    //cinemaList 每次都会重新覆盖
+  };
 }
+
+// filter用于摘出数组中需要的元素组成新数组
+// var arr = ["aaa", "abc", "ccc"];
+// var newarr = arr.filter((item) => item.includes("a"));
+// console.log(newarr);
