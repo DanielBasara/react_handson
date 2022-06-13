@@ -27,7 +27,8 @@ export default class Tabbar extends Component {
               key={item.id}
               className={this.state.current === item.id ? "active" : ""}
               onClick={() => {
-                this.handleClick(item.id);
+                this.props.event(item.id);
+                this.setState({ current: item.id });
               }}
             >
               {item.text}
@@ -37,7 +38,4 @@ export default class Tabbar extends Component {
       </div>
     );
   }
-  handleClick = (id) => {
-    this.setState({ current: id });
-  };
 }

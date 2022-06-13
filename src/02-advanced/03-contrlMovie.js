@@ -1,14 +1,28 @@
 import React, { Component } from "react";
 import "./css/02-maizuo.css";
-import Film from "./maizuoComponent/film";
-import Center from "./maizuoComponent/center";
-import Cinema from "./maizuoComponent/cinema";
-import Tabbar from "./maizuoComponent/tabbar";
-import Navbar from "./maizuoComponent/navbar";
+import Film from "./maizuoComponent2/film";
+import Center from "./maizuoComponent2/center";
+import Cinema from "./maizuoComponent2/cinema";
+import Tabbar from "./maizuoComponent2/tabbar";
+import Navbar from "./maizuoComponent2/navbar";
 
 export default class App extends Component {
   state = {
     current: 1,
+    list: [
+      {
+        id: 1,
+        text: "电影",
+      },
+      {
+        id: 2,
+        text: "影院",
+      },
+      {
+        id: 3,
+        text: "我的",
+      },
+    ],
   };
   render() {
     return (
@@ -27,6 +41,8 @@ export default class App extends Component {
             console.log(evt);
             this.setState({ current: evt });
           }}
+          current={this.state.current}
+          list={this.state.list}
         ></Tabbar>
       </div>
     );
