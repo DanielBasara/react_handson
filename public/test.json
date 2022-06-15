@@ -1,0 +1,16 @@
+{
+    "film": [
+        {
+            "filmID": 5386,
+            "name": "aaaa",
+            "poster": "http://localhost:3000/logo192.png",
+            "synopsis": "电影讲述了一个"
+        },
+        {
+            "filmID": 1234,
+            "name": "cccc",
+            "poster": "http://localhost:3000/logo512.png",
+            "synopsis": "电影讲述了两个"
+        }
+    ]
+}
