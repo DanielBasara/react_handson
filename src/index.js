@@ -18,11 +18,16 @@ import { createRoot } from "react-dom/client";
 // import App from "./02-advanced/03-contrlMovie";
 // import App from "./02-advanced/04-sonAfatherTable";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import App from "./03-hooks/04-useEffect2";
 =======
 // import App from "./02-advanced/14-lifeCycle-update";
 import App from "./03-hooks/02-todolist";
 >>>>>>> home
+=======
+// import App from "./02-advanced/14-lifeCycle-update";
+import App from "./04-router/01-Cinema";
+>>>>>>> origin/home
 
 // //reactDOM有一个render方法，功能是把组件渲染并构造DOM树，然后插入到页面上某个特定的元素上
 // ReactDOM.render(
