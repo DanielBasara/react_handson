@@ -5,7 +5,7 @@ import Cinemas from "../views/Cinemas";
 import Center from "../views/Center";
 import NotFound from "../views/notFound";
 
-export default function IndexRouter() {
+export default function IndexRouter(props) {
   return (
     <div>
       <HashRouter>
@@ -20,6 +20,7 @@ export default function IndexRouter() {
           {/* 路由重定向 */}
           {/* <Route component={NotFound}></Route> */}
         </Switch>
+        {props.children}
       </HashRouter>
     </div>
   );
