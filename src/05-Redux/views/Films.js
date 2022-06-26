@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect, Switch, NavLink } from "react-router-dom";
-import NowPlaying from "../views/films/NowPlaying";
-import Comingsoon from "../views/films/Comingsoon";
+import NowPlaying from "./films/NowPlaying";
+import Comingsoon from "./films/Comingsoon";
 export default function Films() {
   return (
     <div>

@@ -2,9 +2,9 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function (app) {
   app.use(
-    "/ajax",
+    "/j",
     createProxyMiddleware({
-      target: "https://i.maoyan.com/",
+      target: "https://movie.douban.com/",
       changeOrigin: true,
     })
   );
